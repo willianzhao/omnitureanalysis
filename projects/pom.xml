@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion> 	
+	<parent>
+    	<groupId>org.willianzhao</groupId>
+        <artifactId>omnitureanalysis</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    
+    <groupId>org.willianzhao.omnitureanalysis</groupId>
+    <artifactId>projects</artifactId>
+    <packaging>pom</packaging>
+    
+  	<name>Projects</name>
+
+    <properties>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <org.mapdb.version>1.0.1</org.mapdb.version>
+        <org.apache.logging.log4j.version>2.0-rc1</org.apache.logging.log4j.version>               
+        <org.apache.hadoop.version>2.4.0.2.1.2.0-402</org.apache.hadoop.version>
+        <org.apache.hadoop-map-reduce.client.core.version>2.4.0.2.1.2.0-402</org.apache.hadoop-map-reduce.client.core.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+        	<dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-common</artifactId>
+                <version>${org.apache.hadoop.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-hdfs</artifactId>
+                <version>${org.apache.hadoop.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-mapreduce-client-core</artifactId>
+                <version>${org.apache.hadoop-map-reduce.client.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapdb</groupId>
+                <artifactId>mapdb</artifactId>
+                <version>${org.mapdb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${org.apache.logging.log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${org.apache.logging.log4j.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+ 
+    <modules>
+        <module>public</module>
+        <module>x-platform-txn-attribution</module>
+    </modules>
+</project>

@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.willianzhao.omnitureanalysis</groupId>
+        <artifactId>projects</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <groupId>org.willianzhao.omnitureanalysis.projects</groupId>
+    <artifactId>x-platform-txn-attribution</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Transaction-Stitching_and_Orders-by-Local-Time</name>
+
+  	<properties>
+        <junit.version>4.11</junit.version>
+        <org.willianzhao.omnitureanalysis.projects.public.version>1.0.0</org.willianzhao.omnitureanalysis.projects.public.version>
+    </properties>
+
+   <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+        	<dependency>
+                <groupId>org.willianzhao.omnitureanalysis.projects</groupId>
+                <artifactId>public</artifactId>
+                <version>${org.willianzhao.omnitureanalysis.projects.public.version}</version>
+        	</dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>	
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-hdfs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-mapreduce-client-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mapdb</groupId>
+            <artifactId>mapdb</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+        	<groupId>${project.groupId}</groupId>
+		<artifactId>public</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
