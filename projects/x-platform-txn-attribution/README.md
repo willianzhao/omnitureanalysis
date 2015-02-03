@@ -10,20 +10,20 @@ The Map-Reduce program is to analyze transaction attributes
  __mvn -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true clean install__
 
  * first compile the public-lib project
-    __cd mr-jobs/production/public__
-    __mvn clean install_
-
-    This it to cache the public-lib jar in local .m2 repository
-
- * then compile x-platform-txn-attribution project
-    __cd mr-jobs/production/x-platform-txn-attribution__
+    __cd projects/public__
     __mvn clean install__
 
-The jar output is __target/x-platform-txn-attribution-0.5.2.jar__
+The jar output is __target/public-1.0.0.jar__
+
+ * then compile x-platform-txn-attribution project
+    __cd projects/x-platform-txn-attribution__
+    __mvn clean install__
+
+The jar output is __target/x-platform-txn-attribution-1.0.0.jar__
 
 ## Standalone Execute
-
- __hadoop jar ./x-platform-txn-attribution-0.5.2.jar -D mapred.child.java.opts=-Xmx2g -D mapred.map.tasks=500 -D mapred.reduce.tasks=74 -m checkoutbehavior -s 20140101 -e 20140304 –n 31__
+### Trasnaction Stitching ###
+ __hadoop jar ./x-platform-txn-attribution-1.0.0.jar -D mapred.child.java.opts=-Xmx2g -D mapred.map.tasks=500 -D mapred.reduce.tasks=74 -m checkoutbehavior -s 20140101 -e 20140304 –n 31__
  
  - -D mapred.child.java.opts :    Java opts for the task tracker child processes.
  - -D mapred.map.tasks=300 : The default number of map tasks per job. Ignored when mapred.job.tracker is "local".
@@ -56,3 +56,5 @@ The output root folder in HDFS is fixed to /data/processed/analyzer . This can b
 ## Data Format
 
 The header for checkout analysis metrics is (delimiter ‘ ~ ‘)
+
+(To be Continued)
