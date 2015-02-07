@@ -20,3 +20,6 @@ To solve this problem we want to break this in 3 different tables or data sets.
 ### Orders by Local Time
 
 Using the open source geography lookup solution, convert the UTC order time to its local timezone and analyze the user purchase pattern.
+
+## License
+This software is issued under the Apache 2 license.
